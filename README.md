@@ -7,7 +7,7 @@ This app will make sure you stay in New World without getting kicked for inactiv
 It's simple, yet effective. Will sent out move and special commands, also in random combinations, to keep you in the game for as long as you want.
 To avoid being real obvious (like autorun), it's sending at different times and combo's.
 
-![demo](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo3.gif)
+![demo](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo3.gif =470x358)
 
 **Usage:**
 1. Download and start the New World - AFK.exe executable;
