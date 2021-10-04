@@ -10,7 +10,7 @@ To avoid being real obvious (like autorun), it's sending at different times and 
 ![demo](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo3.gif)
 
 **Usage:**
-1. Download and start the New World - AFK.exe executable;
+1. Download and start the "New World - AFK.exe" executable;
 2. Click start in the app;
 3. Set and click your mouse once in the game;
 4. The app is running and shows which commands it's sending;
