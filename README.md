@@ -15,9 +15,10 @@ To avoid being real obvious (like autorun), it's sending at different times and 
 5. Click stop to end.
 
 **User interface:**
-![demo1](https://myoctocat.com/assets/images/base-octocat.svg)
 
-![demo2](https://myoctocat.com/assets/images/base-octocat.svg)
+![demo1](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo1.jpg)
+
+![demo2](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo2.jpg)
 
 *Hint: to get your mouse to show ingame, use tab (switch to inventory) and you can use your mouse to start New World - AFK.*
 
