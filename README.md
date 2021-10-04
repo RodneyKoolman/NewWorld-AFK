@@ -14,6 +14,11 @@ To avoid being real obvious (like autorun), it's sending at different times and 
 4. The app is running and shows which commands it's sending;
 5. Click stop to end.
 
+**User interface:**
+![demo1](https://myoctocat.com/assets/images/base-octocat.svg)
+
+![demo2](https://myoctocat.com/assets/images/base-octocat.svg)
+
 *Hint: to get your mouse to show ingame, use tab (switch to inventory) and you can use your mouse to start New World - AFK.*
 
 **Use this at your own risk. Feel free to use and change the app.**
