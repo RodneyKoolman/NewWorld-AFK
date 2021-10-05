@@ -1,4 +1,4 @@
-# New World - AFK
+<h1 align="center">New World - AFK</h1>
 ## Say goodbye to long queues
 
 #### v2.0: refactored code, addded stability, mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
