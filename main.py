@@ -1,52 +1,59 @@
-import threading
-import time
-import random
-from tkinter import *
-from pynput.keyboard import Key, Controller
+import os, time, random, pydirectinput
 from threading import Thread
-
-keyboard_controller = Controller()
-
-def afk():
-    while True:
-        if stop == 1:
-            text["text"] = "Press start and click inside the game once"
-            text2["text"] = "Tip: use 'tab' ingame to get your mouse"
-            start["state"] = "normal"   
-            break
-        
-        wait_in_seconds = random.randint(5,25)
-        text2["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
-        time.sleep(wait_in_seconds)
-        
-        takeaction(random.choice(['w', 'a', 's', 'd', 0, Key.space]))
-        takeaction(random.choice(['q', 'r', 'f', 0]))
+from tkinter import *
 
 def start():
-    global stop
-    global current_thread
-    stop = 0
-    text["text"] = "AFK mode running..."
-    start["state"] = "disabled"
-   
-    current_thread = Thread (target = afk)
-    current_thread.start()
+    start_button["state"] = "disabled"
+    info_label["text"] = "AFK mode running..."
 
-def stop():
-    global stop
-    stop = 1
-    text["text"] = "Stopping, please wait..."
-    text2["text"] = "Waiting for current actions to complete"
+    thread = Thread (name="afk", target=afk)
+    thread.start()
 
-def takeaction(givekey):
-    if(givekey == 0):
-        text2["text"] = "Current action: performing no key presses"
-        time.sleep(random.randint(1,3))
-    else: 
-        text2["text"] = "Current action: pressing {}".format(givekey)
-        keyboard_controller.press(givekey)
-        time.sleep(random.randint(1,3))
-        keyboard_controller.release(givekey)
+def exit():
+    exit_button["state"] = "disabled"
+    start_button["state"] = "disabled"
+
+    #TODO: Gracefully stop thread
+    os._exit(0)
+
+def action(key):
+    if(key == 0):
+        tooltip_label["text"] = "Current action: no or mouse only movement"
+        if(random.randint(0,1) > 0):
+            mouse_direction_lr = random.randint(-30,30)
+            mouse_direction_ud = random.randint(-5,5)
+            pydirectinput.moveRel(mouse_direction_lr, mouse_direction_ud, relative=True)
+    elif (key == 'tab'):
+        pydirectinput.press(key)
+        wait_in_seconds = random.randint(25,300)
+        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
+        time.sleep(wait_in_seconds)
+        pydirectinput.press(key)
+    else:
+        if(random.randint(0,1) > 0):
+            mouse_direction_lr = random.randint(-30,30)
+            mouse_direction_ud = random.randint(-5,5)
+            pydirectinput.moveRel(mouse_direction_lr, mouse_direction_ud, relative=True)
+        pydirectinput.keyDown(key)
+        wait_in_seconds = round(random.uniform(0.2, 1.5), 1)
+        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
+        time.sleep(wait_in_seconds)
+        pydirectinput.keyUp(key)
+
+def afk():
+    while True:        
+        wait_in_seconds = random.randint(60,300)
+        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
+        time.sleep(wait_in_seconds)
+
+        movement_list = ['w', 'a', 's', 'd', 'space', 'tab', 0]
+        random.shuffle(movement_list)
+        for key in movement_list:
+            tooltip_label["text"] = "Current action: pressing {}".format(key)
+            action(key)
+            wait_in_seconds = random.randint(1,6)
+            tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
+            time.sleep(wait_in_seconds)
 
 root = Tk()
 root.title("New World - AFK")
@@ -54,25 +61,25 @@ root.geometry('300x100+50+50')
 root.resizable(False, False)
 root.attributes('-topmost', 1)
 
-frameTop = Frame(root)
-frameTop.pack()
+frame_top = Frame(root)
+frame_top.pack()
 
-frameMiddle = Frame(root)
-frameMiddle.pack()
+frame_middle = Frame(root)
+frame_middle.pack()
 
-frameBottom = Frame(root)
-frameBottom.pack()
+frame_bottom = Frame(root)
+frame_bottom.pack()
 
-text = Label(frameTop, text="Press start and click inside the game once", font=('Helvetica', '9', 'bold'))
-text.pack(side=LEFT, pady=5)
+info_label = Label(frame_top, text="Press start and click inside the game once", font=('Helvetica', '9', 'bold'))
+info_label.pack(side=LEFT, pady=5)
 
-text2 = Label(frameMiddle, text="Tip: use 'tab' ingame to get your mouse", font=('Helvetica', '9', 'italic'))
-text2.pack(side=LEFT)
+tooltip_label = Label(frame_middle, text="Tip: use 'tab' in-game to get your mouse pointer", font=('Helvetica', '9', 'italic'))
+tooltip_label.pack(side=LEFT)
 
-start = Button(frameBottom, text='Start', fg='green', font=('Helvetica', '12', 'bold'), command=start)
-start.pack(side=LEFT, pady=5, padx=8)
+start_button = Button(frame_bottom, text='Start AFK', fg='green', font=('Helvetica', '12', 'bold'), command=start)
+start_button.pack(side=LEFT, pady=5, padx=8)
 
-stop = Button(frameBottom, text='Stop', fg='red', font=('Helvetica', '12', 'bold'), command=stop)
-stop.pack(side=RIGHT, pady=5, padx=8)
+exit_button = Button(frame_bottom, text='Exit', fg='red', font=('Helvetica', '12', 'bold'), command=exit)
+exit_button.pack(side=RIGHT, pady=5, padx=8)
 
 root.mainloop()
