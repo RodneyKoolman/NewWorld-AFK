@@ -1,15 +1,15 @@
 <h1 align="center">New World - AFK</h1>
-## Say goodbye to long queues
+## Stay in-game
+
+<p align="center">Written in Python, freezed into stand-alone executable with PyInstaller.
+This app will make sure you stay in New World without getting kicked for inactivity.
+
+It's simple, yet effective. Will sent out move and special commands, also in random combinations, to keep you in the game for as long as you want.
+To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's.</p>
 
 #### v2.0: refactored code, addded stability, mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
 
 **Download** latest executable release for Windows [here](https://github.com/RodneyKoolman/NewWorld-AFK/archive/refs/tags/v2.0.zip)
-
-Written in Python, freezed into stand-alone executable with PyInstaller.
-This app will make sure you stay in New World without getting kicked for inactivity.
-
-It's simple, yet effective. Will sent out move and special commands, also in random combinations, to keep you in the game for as long as you want.
-To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's.
 
 ![demo](https://github.com/RodneyKoolman/NewWorld-AFK/blob/master/demo/demo3.gif)
 
