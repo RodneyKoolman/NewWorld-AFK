@@ -39,4 +39,5 @@ Use this app at your own risk. This app is just for demonstration purposes. Don'
 ## Author
 
 **Rodney Koolman**
+
 Give a ⭐️ if you like this project!
