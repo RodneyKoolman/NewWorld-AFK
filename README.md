@@ -10,7 +10,7 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 ## Download
 
-- [Windows executable](<API Link> "Windows executable")
+- [Windows executable](https://github.com/RodneyKoolman/NewWorld-AFK/releases/download/v2.0/New_World_AFK_v2.0.exe "Windows executable")
 
 ## Screenshots
 
