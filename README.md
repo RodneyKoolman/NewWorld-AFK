@@ -2,11 +2,11 @@
 
 Written in Python, freezed into stand-alone executable with PyInstaller. This app will make sure you stay in New World without getting kicked for inactivity.
 
-It's simple, yet effective. Will sent out move, special and even mouse commands, also in random combinations, to keep you in the game for as long as you want. To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's combined with mouse adjustments.
+It's simple, yet effective. Will sent out move, special and even mouse commands, in random combinations, to keep you in the game for as long as you want. To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's combined with mouse adjustments.
 
 ## New
 
-**v2.0**: refactored code, addded stability, mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
+**v2.0**: refactored code, addded stability, addded mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
 
 ## Download
 
