@@ -34,8 +34,8 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 ## Disclaimer
 
-**Use this app at your own risk. This app is just for demonstration purposes.
-Don't clog up the servers if you are not going to play.**
+Use this app at your own risk. This app is just for demonstration purposes.
+Don't clog up the servers if you are not going to play.
 
 ## Author
 
