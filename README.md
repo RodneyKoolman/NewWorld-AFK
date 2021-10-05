@@ -1,4 +1,4 @@
-#New World - AFK
+# New World - AFK
 
 Written in Python, freezed into stand-alone executable with PyInstaller. This app will make sure you stay in New World without getting kicked for inactivity.
 
@@ -6,7 +6,7 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 ## New
 
-v2.0: refactored code, addded stability, mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
+**v2.0**: refactored code, addded stability, mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
 
 ## Download
 
@@ -28,15 +28,14 @@ v2.0: refactored code, addded stability, mouse movement, removed special key pre
 4. The app is now running and shows which commands it's sending;
 5. Click exit to end.
 
-*Tip: to get your mouse to show in-game, use tab (switch to inventory) and you can use your mouse to start New World - AFK.*
+***Tip**: to get your mouse to show in-game, use tab (switch to inventory) and you can use your mouse to start New World - AFK.*
 
 ## Disclaimer
 
 **Use this app at your own risk. This app is just for demonstration purposes.
-Don't clog up the servers if you are not going to play. Feel free to use and change the app.**
+Don't clog up the servers if you are not going to play.**
 
 ## Author
 
 **Rodney Koolman**
-
 Give a ⭐️ if you like this project!
