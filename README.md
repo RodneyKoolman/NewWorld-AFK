@@ -1,10 +1,8 @@
-<h1 align="center">New World - AFK</h1>
+#New World - AFK
 
-![demo](/demo/demo3.gif)
+Written in Python, freezed into stand-alone executable with PyInstaller. This app will make sure you stay in New World without getting kicked for inactivity.
 
-<p align="center">Written in Python, freezed into stand-alone executable with PyInstaller. This app will make sure you stay in New World without getting kicked for inactivity.
-
-It's simple, yet effective. Will sent out move, special and even mouse commands, also in random combinations, to keep you in the game for as long as you want. To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's combined with mouse adjustments.</p>
+It's simple, yet effective. Will sent out move, special and even mouse commands, also in random combinations, to keep you in the game for as long as you want. To avoid being real obvious (like auto-run), it's sending at different times, lengths and combo's combined with mouse adjustments.
 
 ## New
 
@@ -15,6 +13,8 @@ v2.0: refactored code, addded stability, mouse movement, removed special key pre
 - [Windows executable](<API Link> "Windows executable")
 
 ## Screenshots
+
+![demo](/demo/demo3.gif)
 
 ![demo](/demo/demo1.jpg)
 
