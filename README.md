@@ -12,8 +12,7 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 - [Windows executable](https://github.com/RodneyKoolman/NewWorld-AFK/releases/download/v2.0/New_World_AFK_v2.0.exe "Windows executable")
 
-**Note:** Windows can say untrusted file because it's unknown.
-This file is safe to use and you can click 'keep' and 'run anyway'.
+**Note:** Windows can say untrusted file because it's unknown. This file is **safe** to use and you can click 'keep' and 'run anyway'.
 
 ## Screenshots
 
