@@ -17,11 +17,11 @@ refactored code, stability improvements, added timer and countdown, added mouse 
 
 ## Screenshots
 
-![demo](/demo/demo3.gif)
-
 ![demo](/demo/demo1.jpg)
 
-![demo](/demo/demo2.jpg)
+![demo](/demo/demo2.gif)
+
+![demo](/demo/demo3.gif)
 
 ## Usage
 
