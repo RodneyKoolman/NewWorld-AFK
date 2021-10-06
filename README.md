@@ -6,7 +6,8 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 ## New
 
-### v2.0: refactored code, stability improvements, added timer and countdown, added mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
+### v2.0: 
+refactored code, stability improvements, added timer and countdown, added mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
 
 ## Download
 
