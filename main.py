@@ -4,10 +4,14 @@ from tkinter import *
 
 def start():
     start_button["state"] = "disabled"
-    info_label["text"] = "AFK mode running..."
+    info_label["text"] = "AFK mode active"
+    info_label["fg"] = "green"
 
-    thread = Thread (name="afk", target=afk)
-    thread.start()
+    thread_control = Thread (name="control", target=control)
+    thread_timer = Thread (name="timer", target=timer)
+    
+    thread_control.start()
+    thread_timer.start()
 
 def exit():
     exit_button["state"] = "disabled"
@@ -16,44 +20,59 @@ def exit():
     #TODO: Gracefully stop thread
     os._exit(0)
 
+def wait(range_start, range_stop):
+    wait_in_seconds = round(random.uniform(range_start, range_stop), 1)
+    while wait_in_seconds > 0:
+        wait_in_seconds = round(wait_in_seconds-0.1, 1)
+        time.sleep(0.1)
+        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
+
+def mouse(range_lr_start, range_lr_stop, range_ud_start, range_ud_stop):
+    if(random.randint(0,1) > 0):
+        mouse_direction_lr = random.randint(range_lr_start, range_lr_stop)
+        mouse_direction_ud = random.randint(range_ud_start, range_ud_stop)
+        pydirectinput.moveRel(mouse_direction_lr, mouse_direction_ud, relative=True)
+
+def timer():
+    time_start = time.time()
+    seconds = 0
+    minutes = 0
+    hours = 0
+
+    while True:
+        time.sleep(1)
+        seconds = int(time.time() - time_start) - minutes * 60
+        if seconds >= 60:
+            minutes += 1
+            seconds = 0
+        if minutes >= 60:
+            hours += 1
+            minutes = 0
+        start_button["text"] = "AFK time: {}:{}:{}".format(hours, minutes, seconds)
+
 def action(key):
     if(key == 0):
-        tooltip_label["text"] = "Current action: no or mouse only movement"
-        if(random.randint(0,1) > 0):
-            mouse_direction_lr = random.randint(-30,30)
-            mouse_direction_ud = random.randint(-5,5)
-            pydirectinput.moveRel(mouse_direction_lr, mouse_direction_ud, relative=True)
+        mouse(-30, 30, -5, 5)
     elif (key == 'tab'):
         pydirectinput.press(key)
-        wait_in_seconds = random.randint(25,300)
-        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
-        time.sleep(wait_in_seconds)
+        wait(25.0,300.0)
         pydirectinput.press(key)
     else:
-        if(random.randint(0,1) > 0):
-            mouse_direction_lr = random.randint(-30,30)
-            mouse_direction_ud = random.randint(-5,5)
-            pydirectinput.moveRel(mouse_direction_lr, mouse_direction_ud, relative=True)
+        mouse(-30, 30, -5, 5)
         pydirectinput.keyDown(key)
-        wait_in_seconds = round(random.uniform(0.2, 1.5), 1)
-        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
-        time.sleep(wait_in_seconds)
+        wait(0.2, 1.2)
         pydirectinput.keyUp(key)
 
-def afk():
+def control():
     while True:        
-        wait_in_seconds = random.randint(60,300)
-        tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
-        time.sleep(wait_in_seconds)
-
+        wait(60.0, 300.0)
         movement_list = ['w', 'a', 's', 'd', 'space', 'tab', 0]
         random.shuffle(movement_list)
+
         for key in movement_list:
             tooltip_label["text"] = "Current action: pressing {}".format(key)
             action(key)
-            wait_in_seconds = random.randint(1,6)
-            tooltip_label["text"] = "Current action: waiting {} seconds".format(wait_in_seconds)
-            time.sleep(wait_in_seconds)
+            wait(0.5, 5.0)
 
 root = Tk()
 root.title("New World - AFK")
@@ -76,10 +95,10 @@ info_label.pack(side=LEFT, pady=5)
 tooltip_label = Label(frame_middle, text="Tip: use 'tab' in-game to get your mouse pointer", font=('Helvetica', '9', 'italic'))
 tooltip_label.pack(side=LEFT)
 
-start_button = Button(frame_bottom, text='Start AFK', fg='green', font=('Helvetica', '12', 'bold'), command=start)
+start_button = Button(frame_bottom, text='Start', fg='green', font=('Helvetica', '9', 'bold'), command=start)
 start_button.pack(side=LEFT, pady=5, padx=8)
 
-exit_button = Button(frame_bottom, text='Exit', fg='red', font=('Helvetica', '12', 'bold'), command=exit)
+exit_button = Button(frame_bottom, text='Exit', fg='red', font=('Helvetica', '9', 'bold'), command=exit)
 exit_button.pack(side=RIGHT, pady=5, padx=8)
 
 root.mainloop()
