@@ -1,6 +1,10 @@
-import os, time, random, pydirectinput
+import os
+import time
+import random
+import pydirectinput
 from threading import Thread
-from tkinter import *
+from tkinter import Tk, Label, Button, Frame
+from tkinter.constants import LEFT, RIGHT
 
 def start():
     start_button["state"] = "disabled"
