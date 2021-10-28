@@ -6,7 +6,8 @@ It's simple, yet effective. Will sent out move, special and even mouse commands,
 
 ## New
 
-### v2.0: 
+### v2.0:
+
 refactored code, stability improvements, added timer and countdown, added mouse movement, removed special key presses (q,r,f), more natural movement with random movement lists and opening inventory.
 
 ## Download
@@ -31,7 +32,7 @@ refactored code, stability improvements, added timer and countdown, added mouse 
 4. The app is now running and shows which commands it's sending;
 5. Click exit to end.
 
-***Tip**: to get your mouse to show in-game, use tab (switch to inventory) and you can use your mouse to start New World - AFK.*
+**Tip**: to get your mouse to show in-game, use tab (switch to inventory) and you can use your mouse to start New World - AFK.
 
 ## Disclaimer
 
