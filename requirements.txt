@@ -1,1 +1,1 @@
-pydirectinput
+pydirectinput==1.0.4
